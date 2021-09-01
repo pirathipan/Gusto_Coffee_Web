@@ -1,0 +1,137 @@
+.container {
+  height: 100%;
+}
+
+.content_all_salon {
+  padding: 50px 0;
+  margin: 0 6%;
+}
+
+//.my-bg {
+//    margin-left: 250px !important;
+//    margin-top: -100px;
+//
+.row {
+  max-height: 1000px;
+  overflow: auto;
+
+}
+
+.card {
+  height: 95%;
+  width: 18rem;
+  margin: 10px auto !important;
+}
+
+.block {
+  background: #d9bfb0;
+  height: 100%;
+  width: 100% !important;
+  border-radius: 25px;
+  //padding: 10px 19%;
+}
+
+
+.sub_title {
+  font-size: 1.5em;
+  text-align: justify;
+}
+
+.content_btn {
+  margin-top: 150px !important;
+}
+
+/* Salon Prives */
+.container_salon {
+  background-color: #d9bfb0;
+  justify-content: center;
+
+  .content_card {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 3% auto 0 auto;
+    height: 100%;
+    max-height: 124rem;
+    justify-content: center;
+
+    .card {
+      height: 500px;
+      width: 390px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      margin-right: 2rem;
+      margin-bottom: 2%;
+    }
+  }
+}
+
+.content_mobile {
+  display: none;
+}
+
+.my-btn {
+  background-color: #435fa9;
+  color: #ffffff;
+  border-radius: 25px;
+}
+
+p {
+  font-family: "calibrib", serif;
+}
+
+h1 {
+  padding: 2%;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+h1, h5 {
+  font-family: "Iskra", serif;
+}
+
+.my-row {
+  margin-top: 150px !important;
+  background-color: #d9bfb0;
+}
+
+.my-section2 {
+  margin-top: 20px !important;
+}
+
+.my-section2 img {
+  width: 8vw !important;
+}
+
+.my-section2 p {
+  text-align: center;
+}
+
+.sub_title {
+  font-size: 27px;
+  text-align: justify;
+  text-align-last: center;
+}
+
+@media (max-width: 1400px) {
+  .col-md-4 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-md-4 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 320px) {
+  .card {
+    width: 16rem;
+  }
+}

@@ -1,0 +1,80 @@
+<div class="content_salon">
+  <div class="row">
+    <div class="my-bg">
+
+      <div class="text-center">
+
+        <form  class="block" id="login" [formGroup]="salonForm" (ngSubmit)="onSubmit()">
+
+          <h1 >Rajouter un salon</h1>
+
+          <div>
+            <!------------- nom salon ------------------>
+            <div  id="divNomSalon" class="input-group mb-3">
+
+              <input type="text" class="form-control" placeholder="Nom du salon *" aria-label="Nom du salon"
+                     aria-describedby="nom_salon" formControlName="nomSalon">
+            </div>
+
+            <!-- --------------- description salon ------------------- -->
+            <div class="input-group mb-3">
+
+            <textarea type="text" class="form-control" placeholder="Description du salon *"
+                      aria-label="Description du salon" aria-describedby="description_salon" formControlName="descriptionSalon"
+                      rows="6">
+              </textarea>
+            </div>
+          </div>
+
+
+          <!-- ---- telecharger une image -------- -->
+          <span class="spanTelecharger" >Télécharger une image</span>
+
+          <div class="input-group mb-3 content_file">
+
+            <div class="divFile"  >
+              <input type="file" class="form-control"  placeholder="Telecharger une image " (change)="upload($event)" id="inputFile">
+
+              <button id="btnFile"  class="btn-success btn h-50" (click)="onUpload()">
+                Envoyer
+              </button>
+            </div>
+
+          </div>
+
+          <!-- ----------------------- choisir une image---------- -->
+          <span class="spanImage">Choisir une image</span>
+
+          <div  id="divImage" class="d-flex mb-3">
+
+            <div class="card"  *ngFor="let img of loadImage[0]; let i = index">
+              <img aria-describedby="imageId" [id]="'image'+ i"
+                   src="{{'https://localhost:8000' + img.contentUrl}}" alt="Card image cap" (click)="getImageName(img.id, i)"
+                   ngDefaultControl class="imgSalon" >
+            </div>
+          </div>
+
+          <!-- ----- prix ---------------- -->
+          <div class="input-group mb-3">
+
+            <input type="number" class="form-control" placeholder="prix *" aria-label="Prix *" aria-describedby="prix"
+                   formControlName="prix">
+          </div>
+
+          <!--------------------- nombre de place -------------------->
+          <div class="input-group mb-3">
+
+            <input type="number" class="form-control" placeholder="Nombres de places *" aria-label="places"
+                   aria-describedby="places" formControlName="nombrePlaces">
+
+          </div>
+
+          <!----------------------- bouton valider -------------------------->
+          <button class="btn my-color btn-default btn-block mb-3 btn_ajouter h-50" type="submit">Ajouter</button>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

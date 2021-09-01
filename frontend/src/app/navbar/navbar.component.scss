@@ -1,0 +1,29 @@
+.navbar{
+  height: 110px;
+  background-color: #F4F3F1 ;
+  .logo_coffee{
+    width: 120px;
+    height: 100px;
+  }
+  .navbar-toggler{
+    //background-color: #F4F3F1!important; ;
+    .navbar-toggler-icon{
+      color: black!important;
+    }
+
+  }
+
+  .show{
+    z-index: 1;
+    background-color: #F4F3F1 ;
+    padding: 0;
+  }
+  ul{
+    li{
+      a{
+        color: #543116;
+        font-size: 21px;
+      }
+    }
+  }
+}

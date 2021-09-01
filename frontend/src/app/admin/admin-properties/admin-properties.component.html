@@ -1,0 +1,26 @@
+<div class="content_admin">
+  <div class="col_menu">
+    <ul class="nav nav-pills flex-column mt-3">
+
+      <li  class="nav-item" >
+        <a href="#"  class="nav-links">
+          <a [routerLink]="['salon']" class="nav-links">Rajouter un salon</a>
+        </a>
+      </li>
+      <li  class="nav-item" >
+        <a href="#"  class="nav-links">
+          <a [routerLink]="['salonAll']" class="nav-links">Tous les Salons</a>
+        </a>
+      </li>
+      <li  class="nav-item" >
+        <a href="#"  class="nav-links">
+          <a [routerLink]="['reservationAll']" class="nav-links">Tous les Réservations</a>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+  <div class="col_content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

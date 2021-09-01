@@ -1,0 +1,100 @@
+.my-color {
+  background-color: #67A656;
+  width: 23vw;
+  border-radius: 11px;
+}
+
+.my-btn {
+  background-color: #36A420;
+  color: white;
+
+}
+a:link{
+  text-decoration: none;
+  align-content: center;
+}
+
+.mx-auto {
+  background-color: #d9bfb0;
+  border-radius: 25px;
+  margin-top: 4%;
+  width: 50%;
+}
+
+.invalid{
+  font-size: 0.9em;
+  color: #dc3545;
+  text-align: center;
+}
+
+.mb-3{
+  padding: 2%;
+}
+
+.content_img{
+  position: relative;
+  img {
+    width: 100%;
+    height: 1000px;
+    object-fit: cover;
+    filter: brightness(50%);
+  }
+
+  .content_legende {
+    position: absolute;
+    top: 0;
+    color: white;
+    bottom: 0;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    font-size: 90%;
+    //padding: 18%;
+    h2{
+      font-size: 90px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+.content_form{
+  margin-bottom: 60px;
+}
+
+@media only screen and  (min-device-width: 320px)  and (max-device-width: 1024px) {
+  .content_img{
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .content_legende {
+      height: 100%;
+      h2{
+        font-size: 40px;
+      }
+    }
+  }
+
+}
+
+@media  (max-width: 768px) {
+  .mx-auto {
+    width: 60%;
+  }
+  .my-color {
+    width: 60%;
+  }
+}
+
+@media  (max-width: 425px) {
+  .mx-auto {
+    width: 80%;
+  }
+  .my-color {
+    width: 80%;
+  }
+}

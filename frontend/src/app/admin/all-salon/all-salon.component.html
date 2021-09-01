@@ -1,0 +1,31 @@
+<div class="content_all_salon">
+
+  <div class="row">
+    <div class="my-bg">
+
+      <div class="block">
+        <h1>Tous les salons</h1>
+
+        <div class="row">
+          <div class="col-md-4 my-card" *ngFor="let salon of loadSalon[0]">
+            <div class="card m-3" >
+
+              <img src="{{'https://localhost:8000' + salon.image.contentUrl}}"
+                   class="card-img-top w-100 img-fluid" alt="{{salon.nomSalon}}">
+
+              <div class="card-body">
+                <h5 class="card-title text-center">{{salon.nomSalon}}</h5>
+                <p class="card-text">{{salon.descriptionSalon}}</p>
+                <p class="card-text">Nombre de places : {{salon.nombrePlaces}}</p>
+                <p class="card-text">A partir de {{salon.prix}}€/H</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

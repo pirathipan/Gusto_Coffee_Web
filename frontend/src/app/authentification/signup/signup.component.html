@@ -1,0 +1,92 @@
+<div >
+  <article class="content_img">
+    <img src="assets/images/user3.jpg" alt="user">
+    <div class="content_legende">
+      <h2>Inscription</h2>
+    </div>
+  </article>
+  <div  class="row mt-5 content_form">
+    <div class="col-6 col-md-6  mx-auto my-bg">
+
+      <form style="margin-top: 3%;" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+        <!-- -------------   nom -------------------- -->
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Nom *" aria-label="Nom"
+                 aria-describedby="first-name" formControlName="firstName">
+        </div>
+
+
+
+        <!-- ---------------Prenom-------------- -->
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Prénom *" aria-label="Prénom *"
+                 aria-describedby="last-name" formControlName="lastName">
+        </div>
+
+
+
+        <!-------------- email ---------------------->
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" placeholder="Email *" aria-label="Email *"
+                 aria-describedby="email" formControlName="email">
+        </div>
+        <ng-container *ngIf="form.email.errors">
+          <h3 class="validator" *ngIf="form.email.errors.email">Votre email doit respecter le format email</h3>
+        </ng-container>
+
+
+        <!---------mot de passe  ------------- -->
+
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Mot de passe *"
+                 aria-label="Mot de passe *" aria-describedby="password" formControlName="password">
+        </div>
+
+        <ng-container *ngIf="form.password.errors">
+          <h3 class="validator" *ngIf="form.password.errors.minlength">Le mot de passe doit avoir minimum 8 caractères
+          </h3>
+        </ng-container>
+
+        <!--------- confirmation mot de passe  ------------- -->
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Confirmer mot de passe *"
+                 aria-label="Confirmer mot de passe *" aria-describedby="password1" formControlName="password1">
+        </div>
+
+        <ng-container *ngIf="form.password1.errors">
+          <h3 class="validator" *ngIf="form.password1.errors.minlength">Le mot de passe doit avoir minimum 8 caractères
+          </h3>
+        </ng-container>
+
+
+        <!-------------- Telephone ------------------------->
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Téléphone *"
+                 aria-label="Téléphone *" aria-describedby="telephone" formControlName="telephone"
+                 maxlength="10">
+        </div>
+
+        <ng-container *ngIf="form.telephone.errors">
+          <h3 class="validator" *ngIf="form.telephone.errors.pattern">Le mot de passe doit avoir minimum 10 caractères
+          </h3>
+        </ng-container>
+
+
+        <!-- ----------------- captcha ------------------ -->
+        <div class="input-group mb-3">
+          <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha">
+          </ngx-recaptcha2>
+        </div>
+
+
+
+        <!-------------------- bouton validation ------------------------------------->
+        <div class="text-center my-text">
+          <button class="btn my-color mb-3" type="submit" [disabled]="!signupForm.valid">S'inscrire</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

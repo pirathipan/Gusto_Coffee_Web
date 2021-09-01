@@ -1,0 +1,8 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        salon_image:
+            uri_prefix: /images/salons
+            upload_destination: '%kernel.project_dir%/public/images/salons'
+            namer: Vich\UploaderBundle\Naming\OrignameNamer

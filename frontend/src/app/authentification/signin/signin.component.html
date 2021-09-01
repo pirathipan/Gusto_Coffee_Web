@@ -1,0 +1,57 @@
+<div style="height: 100%;">
+  <article class="content_img">
+    <img src="assets/images/user3.jpg" alt="user">
+    <div class="content_legende">
+      <h2>Connexion</h2>
+    </div>
+  </article>
+
+  <div  class="row mt-5 content_form">
+    <div class="col-md-4 mx-auto my-bg">
+
+
+
+      <form style="margin-top: 4%;" [formGroup]="loginForm" (ngSubmit)="login()">
+
+        <div *ngIf="showErrorMessage">
+          <h3 class="invalid">Email et mot de passe invalides veuillez réessayer</h3>
+        </div>
+
+        <!-- ---email ---------- -->
+        <div class="input-group mb-3">
+
+          <input type="email" class="form-control"
+                 placeholder="Email"
+                 aria-label="Email"
+                 aria-describedby="email"
+                 formControlName="email"
+          >
+        </div>
+
+
+        <!-- -----mot de passe -->
+        <div class="input-group mb-3">
+
+          <input type="password" class="form-control"
+                 placeholder="Mot de passe"
+                 aria-label="Mot de passe"
+                 aria-describedby="password"
+                 formControlName="password"
+          >
+        </div>
+
+
+        <!-- ---boutin valider ---- -->
+        <div class="text-center">
+          <button class="btn my-color btn-default btn-block mb-3" type="submit" [disabled]="!loginForm.valid">Connexion</button>
+        </div>
+        <hr>
+        <div class="text-center" >
+          <p>Vous n'avez pas de compte ? </p>
+          <button  (click)="createCompte()" class="btn my-color btn-default btn-block mb-3 compte">Créer un compte</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

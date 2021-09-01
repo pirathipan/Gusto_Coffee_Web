@@ -1,0 +1,57 @@
+.content_resevation {
+  padding: 50px 0;
+  margin: 0 6%;
+}
+
+.bg1 {
+  margin-top: 5px;
+  margin-left: 300px !important;
+}
+
+.btn {
+  margin: 2px;
+}
+
+.form-control {
+  width: 50vw;
+}
+
+.block {
+  background: #d9bfb0;
+  height: 100%;
+  width: 100% !important;
+  border-radius: 25px;
+  padding: 2%;
+
+}
+
+.content_table {
+  max-height: 800px;
+  overflow: auto;
+}
+
+h1 {
+  padding: 2%;
+  font-family: 'Iskra', serif;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+table,
+td {
+  border: 2px solid white;
+  font-family: 'calibri', sans-serif;
+}
+
+thead,
+tfoot {
+  background-color: #333;
+  color: #fff;
+
+  th {
+    border: 2px solid white;
+    font-family: 'Iskra', serif;
+    text-align: center;
+    font-size: 14.9px;
+  }
+}

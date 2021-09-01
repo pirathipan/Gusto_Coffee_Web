@@ -1,0 +1,141 @@
+.content_img{
+  position: relative;
+  img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(50%);
+  }
+
+  .content_legende {
+    position: absolute;
+    top: 0;
+    color: white;
+    bottom: 0;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    font-size: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .content_info{
+      h1{
+        font-size: 80px;
+      }
+      p{
+        font-size: 35px;
+      }
+    }
+  }
+}
+.monBtn{
+  border-radius: 25px;
+  background-color: #435FA9;
+  color: white;
+}
+
+.sub_title{
+  font-size: 1.5em;
+  text-align: justify;
+}
+.content_btn{
+  margin-top: 150px !important;
+}
+
+
+/* Salon Prives */
+.container_salon{
+  background-color: #D9BFB0;
+  justify-content: center;
+  .content_card{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 3% auto 0 auto;
+    height: 100%;
+    max-height: 124rem;
+    justify-content: center;
+    .card{
+      height: 500px;
+      width: 390px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      margin-right: 2rem;
+      margin-bottom: 2%;
+    }
+  }
+}
+
+.content_mobile{
+  display: none;
+}
+
+.my-btn {
+  background-color: #435FA9;
+  color: #FFFFFF;
+  border-radius: 25px;
+}
+p {
+  font-family: 'Iskra', serif;
+}
+
+h1,h2, h3 {
+  font-family: calibri sans-serif;
+}
+
+.my-row {
+  margin-top: 150px !important;
+  background-color: #D9BFB0;
+}
+.my-section2 {
+  margin-top: 20px !important;
+}
+.my-section2 img {
+  width: 8vw !important;
+}
+.my-section2 p {
+  text-align: center;
+}
+.sub_title {
+  font-size: 27px;
+  text-align: justify;
+  text-align-last: center;
+}
+@media (max-width: 425px) {
+  .content_img{
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .content_legende {
+      height: 100%;
+      .content_info{
+        h1{
+          font-size: 20px;
+        }
+        p{
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  .myTitle{
+    margin-top: 50px !important;
+  }
+  .content_btn {
+    margin-top: 50px !important;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .my-card {
+    display: flex;
+    justify-content: space-around;
+  }
+}

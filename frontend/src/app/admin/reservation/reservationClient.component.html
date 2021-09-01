@@ -1,0 +1,43 @@
+<div class="content_resevation">
+  <div class="row">
+    <div class="my-bg">
+
+      <div class="block">
+        <h1>Tous les réservations</h1>
+
+        <div class="content_table">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Email</th>
+              <th>Prénom</th>
+              <th>Date</th>
+              <th>Heure de debut</th>
+              <th>Heure de fin</th>
+              <th>Durée</th>
+              <th>Salon</th>
+              <th>Nombre de places</th>
+              <th>Prix Unitaire</th>
+              <th>Prix TTC</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let reservation of allReseravation[0]">
+              <td>{{ reservation.client.email }}</td>
+              <td>{{ reservation.client.prenomClient }}</td>
+              <td>{{ reservation.dateDebut | date: "dd/MM/yyyy" }}</td>
+              <td>{{ reservation.heureDebut | date: "HH:mm" }}</td>
+              <td>{{ reservation.heureFin | date: "HH:mm" }}</td>
+              <td>{{ reservation.duree }}</td>
+              <td>{{ reservation.salon.nomSalon }}</td>
+              <td>{{ reservation.salon.nombrePlaces }}</td>
+              <td>{{ reservation.salon.prix }} €</td>
+              <td>{{ reservation.salon.prix * reservation.duree }} €</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

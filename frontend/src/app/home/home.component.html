@@ -1,0 +1,231 @@
+
+<section>
+  <article class="content_img">
+    <img src="../../assets/images/salon2.jpg" alt="" class="img_legende">
+    <div class="content_legende">
+      <div class="content_info">
+        <h1 class="title">Coworking sur mesure à Paris 10 !</h1>
+        <p class="sub_title">
+          Rejoingnez un espace collaboratif au coeur de l'innovation parisienne.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <article class="container">
+    <div class="col-row d-flex container article_new">
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+        <div class="col">
+          <img src="../../assets/images/user4.jpg" alt="section2" class="img-fluid w-100 h-100">
+        </div>
+        <div class="col">
+          <p class="title text-center">Le nouveau coffee-shop tendance</p>
+          <p class="sub_title">Gusto coffe vous propose un espace de coworking placé à coté de la gare du nord.</p>
+          <p class="sub_title">
+            Le confort et les équipements informatiques nécessaires à votre productivité, alliés à une ambiance "cosy"
+            et des cafés de qualités signés Gusto Coffee.
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+
+<section class="section_offre">
+  <div class="container">
+    <article class="row">
+      <h2 class="text-center mt-3">Nos offres inclus dans chaque offre</h2>
+      <div class="">
+        <div class=" row justify-content-center">
+          <div class="col-4 d-flex">
+            <div class="content_img">
+              <img src="../../assets/images/coffee-min.png" alt="coffee" class="img-fluid" style="width: 90px; height: 90px;">
+            </div>
+            <div class="content_info">
+              <h6>CAFE & THE</h6>
+              <p>Disposez à tout moment de café et de thé d'origine biologique, ainsi que des fruits frais et secs.</p>
+            </div>
+          </div>
+          <div class="col-4 d-flex">
+            <div class="content_img">
+              <img src="../../assets/images/consergerie-min.png" alt="coffee" class="img-fluid" style="width: 90px; height: 90px;">
+            </div>
+            <div class="content_info">
+              <h6>CUISINE</h6>
+              <p>Rechauffer vos plats ou bien manger dans votre sandwicherie,dans nos cuisines entièrement équipées.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row justify-content-center">
+
+          <div class="col-4 d-flex">
+            <div class="content_img">
+              <img src="../../assets/images/consergerie-min.png" alt="coffee" class="img-fluid" style="width: 90px; height: 90px;">
+            </div>
+            <div class="content_info">
+              <h6>RECEPTION ET CONCIERGE</h6>
+              <p>Facilitez la vie avec notre équipe de service de conciergerie et d'acceuil de vos invités</p>
+            </div>
+          </div>
+          <div class="col-4 d-flex">
+            <div class="content_img">
+              <img src="../../assets/images/printer-min.png" alt="print" class="" style="width: 90px; height: 90px;">
+            </div>
+            <div class="content_info">
+              <h6>IMPRIMANTES</h6>
+              <p>Imprimez, scannez et photocopiez vos documents professionnels à l'aide de nos imprimantes. </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-4 d-flex">
+            <div class="content_img">
+              <img src="../../assets/images/tel-min.png" alt="coffee" class="" style="width: 90px; height: 90px;">
+            </div>
+
+            <div class="content_info">
+              <h6>PHONEBOOTH</h6>
+              <p>Passer vos appels téléphoniques en toutes discrétions dans l'une de nos cabinets dédiées.</p>
+            </div>
+          </div>
+          <div class="col-4 d-flex">
+            <div class="content_img">
+              <img src="../../assets/images/app-min.png" alt="application-dediee" class="" style="width: 90px; height: 90px;">
+            </div>
+            <div class="content_info">
+              <h6>Application dédiéé</h6>
+              <p>Accedez à nos services de grooming (réservation de salle de réunion, voir les disponibilités...) depuis notre application mobile. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="content_bureaux">
+  <h2 class="text-center mt-3">Nos offres de bureaux</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let salon of loadSalon[0] | slice: 0:3; let i = index">
+        <div class="card m-3" style="width: 18rem;border: none;">
+          <img src="{{'https://localhost:8000' + salon.image.contentUrl }}" class="card-img-top w-100 img-fluid" alt="{{ salon.nomSalon }}">
+          <div class="card-body">
+            <h5 class="card-title text-center">{{ salon.nomSalon }}</h5>
+            <p class="card-text">{{ salon.descriptionSalon }}</p>
+            <p class="card-text">Nombre de places : {{salon.nombrePlaces}}</p>
+            <p class="card-text">A partir de {{ salon.prix }}€/H</p>
+            <!--
+            <div *ngFor="let res of salon.reservation">
+              <p class="card-text" *ngIf="res.reserved == true ">reserved</p>
+            </div>
+            -->
+            <button  class="btn w-100 monBtn"  (click)="navigateByUrl(salon)">Voir Salon</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<article class="article_avis mt-5">
+  <h2 class="text-center mt-5">Parce que l'avis de nos clients est précieux</h2>
+
+  <div class="container px-4 px-lg-5 mt-5 content_pc">
+    <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
+      <div class="myClass col mb-5">
+        <img src="../../assets/images/user1.png" class="rounded-circle" alt="user6">
+        <div>
+          <p>Entre le coffee-shop, la sandwicherie et les services de coworking, Guesto coffee est un petit havre de paix caché dans le 10e. </p>
+        </div>
+      </div>
+      <div class="myClass col mb-5">
+        <img src="../../assets/images/user4.png" class="rounded-circle" alt="user6">
+        <div>
+          <p>La décoration est juste magnifique et puis le point fort est la localisation.</p>
+          <p></p>
+        </div>
+      </div>
+      <div class="myClass col mb-5">
+        <img src="../../assets/images/user2.png" class="rounded-circle" alt="user6">
+        <div>
+          <p>Rien a dire le serrvice au top ! Les salons sont cosy onse sent bien directement. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content_mobile">
+    <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="myClass col-8">
+            <img src="../../assets/images/user1.png" class="rounded-circle " alt="user6">
+            <div>
+              <p>Entre le coffee-shop, la sandwicherie et les services de coworking, Guesto coffee est un petit havre de paix caché dans le 10e. </p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="myClass col-8">
+            <img src="../../assets/images/user4.png" class="rounded-circle " alt="user6">
+            <div>
+              <p>La décoration est juste magnifique et puis le point fort est la localisation.</p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="myClass col-8">
+            <img src="../../assets/images/user2.png" class="rounded-circle " alt="user6">
+            <div>
+              <p>Rien a dire le serrvice au top !! les salons sont cosy onse sent bien directement. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<section>
+  <article class="row content_partenaires">
+    <h2 class="text-center mt-3">Nos partenaires</h2>
+    <div class="content_pc">
+      <div class="container d-flex justify-content-center">
+        <img src="assets/images/Sigfox.png" alt="" class="partenaire_img sig_img">
+        <img src="assets/images/KeyOpsTech.png" alt="" class="partenaire_img key_img">
+      </div>
+
+    </div>
+
+    <div class="content_mobile">
+      <div id="carouselExampleControls3" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="myClass col-12 text-center">
+              <img src="assets/images/Sigfox.png" alt="" class="partenaire_img sig_img">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="myClass col-12 text-center">
+              <img src="assets/images/KeyOpsTech.png" alt="" class="partenaire_img key_img">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="myClass col-12 text-center">
+              <img src="assets/images/Sigfox.png" alt="" class="partenaire_img sig_img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<app-footer></app-footer>

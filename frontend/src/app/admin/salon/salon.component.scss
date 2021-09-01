@@ -1,0 +1,164 @@
+//.my-bg {
+//  margin-left: 250px !important;
+//  margin-top: -100px;
+//}
+
+.content_salon {
+  padding: 50px 0;
+  margin: 0 6%;
+}
+
+h1 {
+  padding: 1%;
+  font-family: 'Iskra', serif;
+}
+
+form {
+  //margin-top: 50px;
+  width: 100% !important;
+}
+
+.my-color {
+  color: white;
+  background-color: #0B7FC7;
+  width: 61vw;
+  border-radius: 12px;
+}
+
+.block {
+  background: #d9bfb0;
+  height: 100%;
+  border-radius: 25px;
+}
+
+#divNomSalon {
+  margin-top: 4%;
+}
+
+div.input-group.mb-3 {
+  width: 53vw;
+  margin: auto;
+}
+
+.spanTelecharger {
+  font-size: 1.7em;
+  font-family: 'Iskra', serif;
+}
+
+.divFile {
+  display: flex;
+  margin-left: -2%;
+}
+
+#inputFile {
+  width: 36vw;
+  margin: 2%;
+  padding: 11px 20px;
+  //padding: 11px 4.5%;
+  //&:after{
+  //    content: "Sélectionner les images";
+  //    background-color: #F4F3F1;
+  //    color: black;
+  //    height: 48px;
+  //    position: absolute;
+  //    z-index: 1;
+  //    width: 15%;
+  //    top: 30px;
+  //    left: 0;
+  //    font-family: 'Iskra', serif;
+  //    border-top-left-radius: 7px;
+  //    border-bottom-left-radius: 5px;
+  //    text-align: center;
+  //    padding: 9px 0;
+  //    font-size: 18px;
+  //}
+}
+
+#btnFile {
+  width: 19vw;
+  height: 4vh;
+  margin: 2%;
+  font-size: 22px;
+}
+
+.spanImage {
+  font-size: 2em;
+  font-family: 'Iskra', serif;
+}
+
+#divImage {
+  flex-wrap: wrap;
+  margin-left: 3%;
+  max-height: 450px;
+  overflow: auto;
+}
+
+.card {
+  margin: 1%;
+  border: none;
+}
+
+.imgSalon {
+  width: 12vw;
+  object-fit: cover;
+  height: 12vh;
+}
+
+.selectedBackground {
+  border: 3px solid #087717;
+}
+
+.btn_ajouter {
+  font-size: 22px;
+  width: 19vw;
+  height: 4vh;
+}
+
+@media (max-width: 1024px) {
+  form {
+    width: 100%;
+  }
+  .imgSalon {
+    width: 19vw;
+    object-fit: cover;
+    height: 22vh;
+  }
+  .content_file {
+    .divFile {
+      display: block;
+      width: 100%;
+
+      #inputFile {
+        width: 100%;
+      }
+    }
+  }
+  div.input-group.mb-3 {
+    width: 90%;
+    margin: auto;
+  }
+  #btnFile,
+  .btn_ajouter {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .imgSalon {
+    width: 18vw;
+    object-fit: cover;
+    height: 16vh;
+  }
+
+
+}
+
+@media (max-width: 425px) {
+  .imgSalon {
+    width: 38vw;
+    object-fit: cover;
+    height: 16vh;
+  }
+
+
+}

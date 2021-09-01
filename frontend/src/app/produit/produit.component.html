@@ -1,0 +1,162 @@
+<div class="content_img">
+  <img src="../../assets/images/salon5.png" alt="section1">
+  <div class="content_legende">
+    <div class="content_info">
+      <h1 class="my-titre">Coworking sur mesure à Paris 10 !</h1>
+      <p class="textdouverture"> Rejoingnez un espace collaboratif au coeur de l'innovation parisienne.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section pb-5 content_objectifs">
+
+  <h2>Un lieu pensé pour atteindre vos objectifs.</h2>
+
+  <div class="row" *ngFor="let salon of salonList; let i= index">
+
+    <div class="col-lg-6 mb-4 ">
+      <img src="{{'https://localhost:8000' + salon.image.contentUrl }}" class="w-100 img-fluid"
+           alt="{{ salon.nomSalon }}">
+    </div>
+
+    <div class="col-lg-6">
+
+      <div class="paragraph">
+        <h3 class="text-center">{{ salon.nomSalon }}</h3>
+        <p>{{ salon.descriptionSalon }}</p>
+        <p>Nombre de places : {{salon.nombrePlaces}}</p>
+        <p>A partir de: {{ salon.prix }}€/H</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form [formGroup]="reserveForm" (ngSubmit)="onSubmit()">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="date_debut">Date de debut</span>
+          <input type="date" class="form-control"
+                 placeholder="Date de debut"
+                 aria-label="Date de debut"
+                 aria-describedby="date_debut"
+                 formControlName="dateDebut"
+                 value="date(now)"
+                 min="{{startedDate}}"
+                 required
+          >
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="heure_debut">Heure de debut</span>
+          <input type="time" class="form-control"
+                 id="heureDebut"
+                 placeholder="Heure de debut"
+                 aria-label="Heure de debut"
+                 aria-describedby="heure_debut"
+                 formControlName="heureDebut"
+                 required
+          >
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="heure_fin">Heure de fin</span>
+          <input type="time" class="form-control"
+                 id="heureFin"
+                 placeholder="Heure de fin"
+                 aria-label="Heure de fin"
+                 aria-describedby="heure_fin"
+                 formControlName="heureFin"
+                 required
+          >
+        </div>
+        <div class="invalid" *ngIf="errorMsg != ''">
+          <p>{{ errorMsg }}</p>
+        </div>
+        <div *ngIf="!hasAuthToken()">
+          <p>Veillez-vous identifier pour réserver.</p>
+        </div>
+        <div class="text-center my-text">
+          <button class="btn btn-primary btn-lg p-0" [disabled]="!reserveForm.valid"  type="submit" (click)="calculDifferenceHeure()">Réserver</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-md-6">
+      <div id="payments">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container my-4 mySection">
+  <h2 class="text-center">Nos équipements et services inclus</h2>
+  <div class="row">
+    <div class="mt-3 col-md-4">
+      <div class="d-block">
+        <h4>Services</h4>
+        <div class="d-flex">
+          <img class="w-25 h-25" src="../../assets/images/reception-min.png" alt="acceuil">
+          <p class="m-2">acceuil des invités</p>
+        </div>
+        <div class="d-flex">
+          <img class="w-25 h-25" src="../../assets/images/consergerie-min.png" alt="conciergerie">
+          <p>Conciergerie</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3 col-md-4">
+      <div class="d-block">
+        <h4>Bien-être</h4>
+        <div class="d-flex">
+          <img class="w-25 h-25" src="../../assets/images/Food.png" alt="food">
+          <p>Snack sucré & salé</p>
+        </div>
+        <div class="d-flex">
+          <img class="w-25 h-25" src="../../assets/images/coffee-min.png" alt="coffee">
+          <p>Café & thé</p>
+        </div>
+        <div class="d-flex">
+          <img class="w-25 h-25" src="../../assets/images/tel-min.png" alt="tel">
+          <p>Cabines téléphoniques</p>
+        </div>
+        <div class="d-flex">
+          <img class="w-25 h-25" src="../../assets/images/clean-min.png" alt="clean">
+          <p>Nettoyage des espaces de travail</p>
+        </div>
+        <div class="d-flex">
+          <img class="w-25 h-25" src="../../assets/images/micro-min.png" alt="micro">
+          <p>Evénements et conférences</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3 col-md-4">
+      <div class="d-block">
+        <h4>Équipement</h4>
+        <div class="d-flex">
+          <img class="w-25 h-25" src="../../assets/images/wifi-min.png" alt="wifi">
+          <p>Wifi très haute débit et sécurisée</p>
+        </div>
+        <div class="d-flex">
+          <img class="w-25 h-25" src="../../assets/images/app-min.png" alt="app">
+          <p>Application dédiée</p>
+        </div>
+        <div class="d-flex">
+          <img class="w-25 h-25" src="../../assets/images/printer-min.png" alt="printer">
+          <p>Impressions</p>
+        </div>
+        <div class="d-flex">
+          <img class="w-25 h-25" src="../../assets/images/burautique-min.png" alt="bureautique">
+          <p>Vente de support numériques</p>
+        </div>
+        <div class="d-flex">
+          <img class="w-25 h-25" src="../../assets/images/calendar-min.png" alt="calendar">
+          <p>Réservation en ligne</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+
